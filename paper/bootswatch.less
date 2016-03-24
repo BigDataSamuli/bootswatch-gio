@@ -2,21 +2,60 @@
 // Bootswatch
 // -----------------------------------------------------
 
-@web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+// @web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"; 
+// .web-font(@path) {
+//   @import url("@{path}");
+// }
+// .web-font(@web-font-path);
 
-.web-font(@path) {
-  @import url("@{path}");
+@font-face {
+    font-family: 'Apex New';
+    src: url(../fonts/ApexNewWeb-Book.eot);
+    src: url(../fonts/ApexNewWeb-Book.eot#iefix) format('embedded-opentype'), url(../fonts/ApexNewWeb-Book.woff) format('woff'), url(../fonts/ApexNewWeb-Book.svg) format('svg');
+    font-weight: 400;
+    font-style: normal;
 }
-.web-font(@web-font-path);
+
+@font-face {
+    font-family: 'Apex New';
+    src: url(../fonts/ApexNewWeb-Light.eot);
+    src: url(../fonts/ApexNewWeb-Light.eot#iefix) format('embedded-opentype'), url(../fonts/ApexNewWeb-Light.woff) format('woff'), url(../fonts/ApexNewWeb-Light.svg) format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apex New';
+    src: url(../fonts/ApexNewWeb-Bold.eot);
+    src: url(../fonts/ApexNewWeb-Bold.eot#iefix) format('embedded-opentype'), url(../fonts/ApexNewWeb-Bold.woff) format('woff'), url(../fonts/ApexNewWeb-Bold.svg) format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
 
 // Navbar =====================================================================
 
 .navbar {
   border: none;
-  .box-shadow(0 1px 2px rgba(0,0,0,.3));
+  // .box-shadow(0 1px 2px rgba(0,0,0,.3));
+  background: linear-gradient(to right, black 50%, @navbar-default-bg 50%);
+
+  &-collapse {
+      background: @navbar-default-bg;
+  }
+
+  &-nav {
+      text-transform: uppercase;
+
+      .active {
+          font-weight: bold;
+      }
+  }
 
   &-brand {
     font-size: 24px;
+    background-color: @navbar-default-brand-bg;
+    width: 350px;
+    margin-right: @navbar-padding-vertical;
   }
 
   &-inverse {
@@ -72,7 +111,7 @@
 .btn {
   text-transform: uppercase;
   border: none;
-  .box-shadow(1px 1px 4px rgba(0,0,0,.4));
+  // .box-shadow(1px 1px 4px rgba(0,0,0,.4));
   .transition(all 0.4s);
 
   &-link {
@@ -135,6 +174,11 @@ button {
 
 a {
   .transition(all 0.2s);
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 // Tables =====================================================================
@@ -595,9 +639,10 @@ input[type="checkbox"],
 }
 
 .panel {
-  border: none;
+  border: 1px solid @panel-default-heading-bg;
   border-radius: 2px;
-  .box-shadow(0 1px 4px rgba(0,0,0,.3));
+  // .box-shadow(0 1px 4px rgba(0,0,0,.3));
+  box-shadow: none;
 
   &-heading {
     border-bottom: none;
