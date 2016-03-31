@@ -2,35 +2,11 @@
 // Bootswatch
 // -----------------------------------------------------
 
-// @web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"; 
-// .web-font(@path) {
-//   @import url("@{path}");
-// }
-// .web-font(@web-font-path);
-
-@font-face {
-    font-family: 'Apex New';
-    src: url(../fonts/ApexNewWeb-Book.eot);
-    src: url(../fonts/ApexNewWeb-Book.eot#iefix) format('embedded-opentype'), url(../fonts/ApexNewWeb-Book.woff) format('woff'), url(../fonts/ApexNewWeb-Book.svg) format('svg');
-    font-weight: 400;
-    font-style: normal;
+@web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"; 
+.web-font(@path) {
+  @import url("@{path}");
 }
-
-@font-face {
-    font-family: 'Apex New';
-    src: url(../fonts/ApexNewWeb-Light.eot);
-    src: url(../fonts/ApexNewWeb-Light.eot#iefix) format('embedded-opentype'), url(../fonts/ApexNewWeb-Light.woff) format('woff'), url(../fonts/ApexNewWeb-Light.svg) format('svg');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Apex New';
-    src: url(../fonts/ApexNewWeb-Bold.eot);
-    src: url(../fonts/ApexNewWeb-Bold.eot#iefix) format('embedded-opentype'), url(../fonts/ApexNewWeb-Bold.woff) format('woff'), url(../fonts/ApexNewWeb-Bold.svg) format('svg');
-    font-weight: 600;
-    font-style: normal;
-}
+.web-font(@web-font-path);
 
 // Navbar =====================================================================
 
@@ -56,6 +32,12 @@
     background-color: @navbar-default-brand-bg;
     width: 350px;
     margin-right: @navbar-padding-vertical;
+
+    padding: 20px;
+    background-image: url('../images/logo_big.png');
+    background-position: left;
+    background-size: 50%;
+    background-repeat: no-repeat;
   }
 
   &-inverse {
@@ -73,6 +55,18 @@
       }
     }
   }
+}
+
+@media (max-width: @screen-sm) {
+    .navbar {
+        background: @navbar-default-bg;
+
+        &-brand {
+            width: 100px;
+            background-image: url('../images/logo_small.png');
+            background-position: center;
+        }
+    }
 }
 
 // Buttons ====================================================================
